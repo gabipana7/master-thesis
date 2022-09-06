@@ -1,0 +1,833 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 3.1 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated as
+% required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+\datalist[entry]{none/global//global/global}
+  \entry{diverscomplex}{book}{}
+    \name{author}{1}{}{%
+      {{hash=PSE}{%
+         family={Page},
+         familyi={P\bibinitperiod},
+         given={Scott\bibnamedelima E.},
+         giveni={S\bibinitperiod\bibinitdelim E\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Princeton University Press}%
+    }
+    \strng{namehash}{PSE1}
+    \strng{fullhash}{PSE1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{edition}{1st}
+    \field{isbn}{0691137676}
+    \field{title}{Diversity and Complexity}
+    \list{location}{1}{%
+      {USA}%
+    }
+    \field{year}{2010}
+  \endentry
+
+  \entry{NAP628}{book}{}
+    \name{author}{1}{}{%
+      {{hash=CNR}{%
+         family={Council},
+         familyi={C\bibinitperiod},
+         given={National\bibnamedelima Research},
+         giveni={N\bibinitperiod\bibinitdelim R\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {The National Academies Press}%
+    }
+    \strng{namehash}{CNR1}
+    \strng{fullhash}{CNR1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \verb{doi}
+    \verb 10.17226/628
+    \endverb
+    \field{isbn}{978-0-309-03577-4}
+    \field{title}{Condensed-Matter Physics}
+    \verb{url}
+    \verb https://www.nap.edu/catalog/628/condensed-matter-physics
+    \endverb
+    \list{location}{1}{%
+      {Washington, DC}%
+    }
+    \field{year}{1986}
+  \endentry
+
+  \entry{willshawSO}{incollection}{}
+    \name{author}{1}{}{%
+      {{hash=WD}{%
+         family={Willshaw},
+         familyi={W\bibinitperiod},
+         given={David},
+         giveni={D\bibinitperiod},
+      }}%
+    }
+    \name{editor}{3}{}{%
+      {{hash=MR}{%
+         family={Morris},
+         familyi={M\bibinitperiod},
+         given={Richard},
+         giveni={R\bibinitperiod},
+      }}%
+      {{hash=TL}{%
+         family={Tarassenko},
+         familyi={T\bibinitperiod},
+         given={Lionel},
+         giveni={L\bibinitperiod},
+      }}%
+      {{hash=KM}{%
+         family={Kenward},
+         familyi={K\bibinitperiod},
+         given={Michael},
+         giveni={M\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Academic Press}%
+    }
+    \strng{namehash}{WD1}
+    \strng{fullhash}{WD1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{booktitle}{Cognitive Systems - Information Processing Meets Brain
+  Science}
+    \verb{doi}
+    \verb https://doi.org/10.1016/B978-012088566-4/50004-0
+    \endverb
+    \field{isbn}{978-0-12-088566-4}
+    \field{pages}{5\bibrangedash 33}
+    \field{title}{CHAPTER 1 - Self-organization in the Nervous System}
+    \verb{url}
+    \verb https://www.sciencedirect.com/science/article/pii/B978012088566450004
+    \verb 0
+    \endverb
+    \list{location}{1}{%
+      {London}%
+    }
+    \field{year}{2006}
+  \endentry
+
+  \entry{simplestSOC}{article}{}
+    \name{author}{1}{}{%
+      {{hash=FH}{%
+         family={Flyvbjerg},
+         familyi={F\bibinitperiod},
+         given={Henrik},
+         giveni={H\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {American Physical Society}%
+    }
+    \strng{namehash}{FH1}
+    \strng{fullhash}{FH1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \verb{doi}
+    \verb 10.1103/PhysRevLett.76.940
+    \endverb
+    \field{issue}{6}
+    \field{pages}{940\bibrangedash 943}
+    \field{title}{Simplest Possible Self-Organized Critical System}
+    \verb{url}
+    \verb https://link.aps.org/doi/10.1103/PhysRevLett.76.940
+    \endverb
+    \field{volume}{76}
+    \field{journaltitle}{Phys. Rev. Lett.}
+    \field{year}{1996}
+    \warn{\item Invalid format of field 'month'}
+  \endentry
+
+  \entry{BTW}{article}{}
+    \name{author}{3}{}{%
+      {{hash=BP}{%
+         family={Bak},
+         familyi={B\bibinitperiod},
+         given={Per},
+         giveni={P\bibinitperiod},
+      }}%
+      {{hash=TC}{%
+         family={Tang},
+         familyi={T\bibinitperiod},
+         given={Chao},
+         giveni={C\bibinitperiod},
+      }}%
+      {{hash=WK}{%
+         family={Wiesenfeld},
+         familyi={W\bibinitperiod},
+         given={Kurt},
+         giveni={K\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {American Physical Society}%
+    }
+    \strng{namehash}{BPTCWK1}
+    \strng{fullhash}{BPTCWK1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \verb{doi}
+    \verb 10.1103/PhysRevLett.59.381
+    \endverb
+    \field{issue}{4}
+    \field{pages}{381\bibrangedash 384}
+    \field{title}{Self-organized criticality: An explanation of the 1/f noise}
+    \verb{url}
+    \verb https://link.aps.org/doi/10.1103/PhysRevLett.59.381
+    \endverb
+    \field{volume}{59}
+    \field{journaltitle}{Phys. Rev. Lett.}
+    \field{year}{1987}
+    \warn{\item Invalid format of field 'month'}
+  \endentry
+
+  \entry{Watkins2015}{article}{}
+    \name{author}{5}{}{%
+      {{hash=WNW}{%
+         family={Watkins},
+         familyi={W\bibinitperiod},
+         given={Nicholas\bibnamedelima W.},
+         giveni={N\bibinitperiod\bibinitdelim W\bibinitperiod},
+      }}%
+      {{hash=PG}{%
+         family={Pruessner},
+         familyi={P\bibinitperiod},
+         given={Gunnar},
+         giveni={G\bibinitperiod},
+      }}%
+      {{hash=CSC}{%
+         family={Chapman},
+         familyi={C\bibinitperiod},
+         given={Sandra\bibnamedelima C.},
+         giveni={S\bibinitperiod\bibinitdelim C\bibinitperiod},
+      }}%
+      {{hash=CNB}{%
+         family={Crosby},
+         familyi={C\bibinitperiod},
+         given={Norma\bibnamedelima B.},
+         giveni={N\bibinitperiod\bibinitdelim B\bibinitperiod},
+      }}%
+      {{hash=JHJ}{%
+         family={Jensen},
+         familyi={J\bibinitperiod},
+         given={Henrik\bibnamedelima J.},
+         giveni={H\bibinitperiod\bibinitdelim J\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{2}{%
+      {Springer Science}%
+      {Business Media LLC}%
+    }
+    \strng{namehash}{WNW+1}
+    \strng{fullhash}{WNWPGCSCCNBJHJ1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \verb{doi}
+    \verb 10.1007/s11214-015-0155-x
+    \endverb
+    \field{issn}{1572-9672}
+    \field{number}{1-4}
+    \field{pages}{3–44}
+    \field{title}{25 Years of Self-organized Criticality: Concepts and
+  Controversies}
+    \verb{url}
+    \verb http://dx.doi.org/10.1007/s11214-015-0155-x
+    \endverb
+    \field{volume}{198}
+    \field{journaltitle}{Space Science Reviews}
+    \field{year}{2015}
+    \warn{\item Invalid format of field 'month'}
+  \endentry
+
+  \entry{latora}{article}{}
+    \name{author}{5}{}{%
+      {{hash=BS}{%
+         family={Boccaletti},
+         familyi={B\bibinitperiod},
+         given={S.},
+         giveni={S\bibinitperiod},
+      }}%
+      {{hash=LV}{%
+         family={Latora},
+         familyi={L\bibinitperiod},
+         given={V.},
+         giveni={V\bibinitperiod},
+      }}%
+      {{hash=MY}{%
+         family={Moreno},
+         familyi={M\bibinitperiod},
+         given={Y.},
+         giveni={Y\bibinitperiod},
+      }}%
+      {{hash=CM}{%
+         family={Chavez},
+         familyi={C\bibinitperiod},
+         given={M.},
+         giveni={M\bibinitperiod},
+      }}%
+      {{hash=HDU}{%
+         family={Hwang},
+         familyi={H\bibinitperiod},
+         given={D.-U.},
+         giveni={D\bibinithyphendelim U\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{BS+1}
+    \strng{fullhash}{BSLVMYCMHDU1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \verb{doi}
+    \verb https://doi.org/10.1016/j.physrep.2005.10.009
+    \endverb
+    \field{issn}{0370-1573}
+    \field{number}{4}
+    \field{pages}{175\bibrangedash 308}
+    \field{title}{Complex networks: Structure and dynamics}
+    \verb{url}
+    \verb https://www.sciencedirect.com/science/article/pii/S037015730500462X
+    \endverb
+    \field{volume}{424}
+    \field{journaltitle}{Physics Reports}
+    \field{year}{2006}
+  \endentry
+
+  \entry{linked}{book}{}
+    \name{author}{1}{}{%
+      {{hash=BAL}{%
+         family={Barabasi},
+         familyi={B\bibinitperiod},
+         given={Albert-Laszlo},
+         giveni={A\bibinithyphendelim L\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Plume}%
+    }
+    \strng{namehash}{BAL1}
+    \strng{fullhash}{BAL1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{isbn}{0452284392}
+    \field{title}{Linked: How Everything Is Connected to Everything Else and
+  What It Means}
+    \field{year}{2003}
+  \endentry
+
+  \entry{smallworlds}{article}{}
+    \name{author}{3}{}{%
+      {{hash=BE}{%
+         family={Baek},
+         familyi={B\bibinitperiod},
+         given={Elisa},
+         giveni={E\bibinitperiod},
+      }}%
+      {{hash=PM}{%
+         family={Porter},
+         familyi={P\bibinitperiod},
+         given={Mason},
+         giveni={M\bibinitperiod},
+      }}%
+      {{hash=PC}{%
+         family={Parkinson},
+         familyi={P\bibinitperiod},
+         given={Carolyn},
+         giveni={C\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{BEPMPC1}
+    \strng{fullhash}{BEPMPC1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \verb{doi}
+    \verb 10.1093/scan/nsaa069
+    \endverb
+    \field{title}{Social Network Analysis for Social Neuroscientists}
+    \field{volume}{16}
+    \field{journaltitle}{Social cognitive and affective neuroscience}
+    \field{month}{05}
+    \field{year}{2020}
+  \endentry
+
+  \entry{eulerBridges}{article}{}
+    \name{author}{1}{}{%
+      {{hash=EL}{%
+         family={Euler},
+         familyi={E\bibinitperiod},
+         given={Leonhard},
+         giveni={L\bibinitperiod},
+      }}%
+    }
+    \keyw{euler-tour graph-theory graphs networks}
+    \strng{namehash}{EL1}
+    \strng{fullhash}{EL1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{pages}{128\bibrangedash 140}
+    \field{title}{Solutio problematis ad geometriam situs pertinentis}
+    \field{volume}{8}
+    \field{journaltitle}{Commentarii Academiae Scientiarum Imperialis
+  Petropolitanae}
+    \field{year}{1736}
+  \endentry
+
+  \entry{natureworks}{book}{}
+    \name{author}{1}{}{%
+      {{hash=BP}{%
+         family={Bak},
+         familyi={B\bibinitperiod},
+         given={Per},
+         giveni={P\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Copernicus}%
+    }
+    \strng{namehash}{BP1}
+    \strng{fullhash}{BP1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{edition}{1st}
+    \field{isbn}{978-1-4757-5426-1}
+    \field{title}{How Nature Works}
+    \field{year}{1996}
+  \endentry
+
+  \entry{OFC}{article}{}
+    \name{author}{3}{}{%
+      {{hash=O}{%
+         family={Olami},
+         familyi={O\bibinitperiod},
+      }}%
+      {{hash=F}{%
+         family={Feder},
+         familyi={F\bibinitperiod},
+      }}%
+      {{hash=C}{%
+         family={Christensen},
+         familyi={C\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{OFC1}
+    \strng{fullhash}{OFC1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{pages}{1244\bibrangedash 1247}
+    \field{title}{Self-organized criticality in a continuous, nonconservative
+  cellular automaton modeling earthquakes.}
+    \field{volume}{68 8}
+    \field{journaltitle}{Physical review letters}
+    \field{year}{1992}
+  \endentry
+
+  \entry{burridge}{article}{}
+    \name{author}{2}{}{%
+      {{hash=BR}{%
+         family={Burridge},
+         familyi={B\bibinitperiod},
+         given={R.},
+         giveni={R\bibinitperiod},
+      }}%
+      {{hash=KL}{%
+         family={Knopoff},
+         familyi={K\bibinitperiod},
+         given={L.},
+         giveni={L\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{BRKL1}
+    \strng{fullhash}{BRKL1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \verb{eprint}
+    \verb https://pubs.geoscienceworld.org/ssa/bssa/article-pdf/57/3/341/269434
+    \verb 5/BSSA0570030341.pdf
+    \endverb
+    \field{issn}{0037-1106}
+    \field{number}{3}
+    \field{pages}{341\bibrangedash 371}
+    \field{title}{{Model and theoretical seismicity}}
+    \field{volume}{57}
+    \field{journaltitle}{Bulletin of the Seismological Society of America}
+    \field{month}{06}
+    \field{year}{1967}
+  \endentry
+
+  \entry{sliderblock}{article}{}
+    \name{author}{3}{}{%
+      {{hash=SR}{%
+         family={Shcherbakov},
+         familyi={S\bibinitperiod},
+         given={Robert},
+         giveni={R\bibinitperiod},
+      }}%
+      {{hash=TD}{%
+         family={Turcotte},
+         familyi={T\bibinitperiod},
+         given={Donald},
+         giveni={D\bibinitperiod},
+      }}%
+      {{hash=RJ}{%
+         family={Rundle},
+         familyi={R\bibinitperiod},
+         given={John},
+         giveni={J\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{SRTDRJ1}
+    \strng{fullhash}{SRTDRJ1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \verb{doi}
+    \verb 10.1016/B978-0-444-53802-4.00094-4
+    \endverb
+    \field{isbn}{9780444538031}
+    \field{pages}{627\bibrangedash 653}
+    \field{title}{Complexity and Earthquakes}
+    \field{journaltitle}{Treatise on Geophysics}
+    \field{month}{04}
+    \field{year}{2015}
+  \endentry
+
+  \entry{INFP}{misc}{}
+    \field{labeltitlesource}{title}
+    \field{title}{The database of earthquakes in Romania is freely available
+  at}
+    \verb{url}
+    \verb http://www.infp.ro/
+    \endverb
+    \field{journaltitle}{INFP}
+  \endentry
+
+  \entry{SCEC}{misc}{}
+    \field{labeltitlesource}{title}
+    \field{title}{The database of earthquakes in California(USA) is freely
+  available at}
+    \verb{url}
+    \verb https://www.scec.org/
+    \endverb
+    \field{journaltitle}{SCEC}
+  \endentry
+
+  \entry{INGV}{misc}{}
+    \field{labeltitlesource}{title}
+    \field{title}{The database of earthquakes in Italy is freely available at}
+    \verb{url}
+    \verb https://www.ingv.it/
+    \endverb
+    \field{journaltitle}{INGV}
+  \endentry
+
+  \entry{JMA}{misc}{}
+    \field{labeltitlesource}{title}
+    \field{title}{The database of earthquakes in Japan is freely available at}
+    \verb{url}
+    \verb https://www.jma.go.jp/jma/index.html
+    \endverb
+    \field{journaltitle}{JMA}
+  \endentry
+
+  \entry{Abe_2004}{article}{}
+    \name{author}{2}{}{%
+      {{hash=AS}{%
+         family={Abe},
+         familyi={A\bibinitperiod},
+         given={S},
+         giveni={S},
+      }}%
+      {{hash=SN}{%
+         family={Suzuki},
+         familyi={S\bibinitperiod},
+         given={N},
+         giveni={N},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {{IOP} Publishing}%
+    }
+    \strng{namehash}{ASSN1}
+    \strng{fullhash}{ASSN1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \verb{doi}
+    \verb 10.1209/epl/i2003-10108-1
+    \endverb
+    \field{number}{4}
+    \field{pages}{581\bibrangedash 586}
+    \field{title}{Scale-free network of earthquakes}
+    \verb{url}
+    \verb https://doi.org/10.1209/epl/i2003-10108-1
+    \endverb
+    \field{volume}{65}
+    \field{journaltitle}{Europhysics Letters ({EPL})}
+    \field{year}{2004}
+    \warn{\item Invalid format of field 'month'}
+  \endentry
+
+  \entry{nemosuite}{article}{}
+    \name{author}{5}{}{%
+      {{hash=KW}{%
+         family={Kim},
+         familyi={K\bibinitperiod},
+         given={Wooyoung},
+         giveni={W\bibinitperiod},
+      }}%
+      {{hash=HYH}{%
+         family={Hsu},
+         familyi={H\bibinitperiod},
+         given={Yi-Hsin},
+         giveni={Y\bibinithyphendelim H\bibinitperiod},
+      }}%
+      {{hash=LZ}{%
+         family={Li},
+         familyi={L\bibinitperiod},
+         given={Zican},
+         giveni={Z\bibinitperiod},
+      }}%
+      {{hash=MP}{%
+         family={Mar},
+         familyi={M\bibinitperiod},
+         given={Preston},
+         giveni={P\bibinitperiod},
+      }}%
+      {{hash=WY}{%
+         family={Wang},
+         familyi={W\bibinitperiod},
+         given={Yangxiao},
+         giveni={Y\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{KW+1}
+    \strng{fullhash}{KWHYHLZMPWY1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \verb{doi}
+    \verb 10.25046/aj0506185
+    \endverb
+    \field{pages}{1545\bibrangedash 1553}
+    \field{title}{NemoSuite: Web-based Network Motif Analytic Suite}
+    \field{volume}{5}
+    \field{journaltitle}{Advances in Science, Technology and Engineering
+  Systems Journal}
+    \field{month}{12}
+    \field{year}{2020}
+  \endentry
+
+  \entry{ESUmotifs}{article}{}
+    \name{author}{1}{}{%
+      {{hash=WS}{%
+         family={Wernicke},
+         familyi={W\bibinitperiod},
+         given={Sebastian},
+         giveni={S\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{WS1}
+    \strng{fullhash}{WS1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \verb{doi}
+    \verb 10.1109/TCBB.2006.51
+    \endverb
+    \field{pages}{347\bibrangedash 59}
+    \field{title}{Efficient Detection of Network Motifs}
+    \field{volume}{3}
+    \field{journaltitle}{IEEE/ACM transactions on computational biology and
+  bioinformatics / IEEE, ACM}
+    \field{month}{10}
+    \field{year}{2006}
+  \endentry
+
+  \entry{nemomap}{article}{}
+    \name{author}{3}{}{%
+      {{hash=HT}{%
+         family={Huynh},
+         familyi={H\bibinitperiod},
+         given={Tien},
+         giveni={T\bibinitperiod},
+      }}%
+      {{hash=MS}{%
+         family={Mbadiwe},
+         familyi={M\bibinitperiod},
+         given={Soma},
+         giveni={S\bibinitperiod},
+      }}%
+      {{hash=KW}{%
+         family={Kim},
+         familyi={K\bibinitperiod},
+         given={Wooyoung},
+         giveni={W\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{HTMSKW1}
+    \strng{fullhash}{HTMSKW1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \verb{doi}
+    \verb 10.25046/aj030523
+    \endverb
+    \field{pages}{186\bibrangedash 199}
+    \field{title}{NemoMap: Improved Motif-centric Network Motif Discovery
+  Algorithm}
+    \field{volume}{3}
+    \field{journaltitle}{Advances in Science, Technology and Engineering
+  Systems Journal}
+    \field{month}{09}
+    \field{year}{2018}
+  \endentry
+
+  \entry{GK}{inproceedings}{}
+    \name{author}{2}{}{%
+      {{hash=GJA}{%
+         family={Grochow},
+         familyi={G\bibinitperiod},
+         given={Joshua\bibnamedelima A.},
+         giveni={J\bibinitperiod\bibinitdelim A\bibinitperiod},
+      }}%
+      {{hash=KM}{%
+         family={Kellis},
+         familyi={K\bibinitperiod},
+         given={Manolis},
+         giveni={M\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{GJAKM1}
+    \strng{fullhash}{GJAKM1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{booktitle}{RECOMB}
+    \field{title}{Network Motif Discovery Using Subgraph Enumeration and
+  Symmetry-Breaking}
+    \field{year}{2007}
+  \endentry
+
+  \entry{MODA}{article}{}
+    \name{author}{3}{}{%
+      {{hash=OS}{%
+         family={Omidi},
+         familyi={O\bibinitperiod},
+         given={Saeed},
+         giveni={S\bibinitperiod},
+      }}%
+      {{hash=SF}{%
+         family={Schreiber},
+         familyi={S\bibinitperiod},
+         given={Falk},
+         giveni={F\bibinitperiod},
+      }}%
+      {{hash=MNA}{%
+         family={Masoudi-Nejad},
+         familyi={M\bibinithyphendelim N\bibinitperiod},
+         given={Ali},
+         giveni={A\bibinitperiod},
+      }}%
+    }
+    \list{language}{1}{%
+      {English}%
+    }
+    \strng{namehash}{OSSFMNA1}
+    \strng{fullhash}{OSSFMNA1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \verb{doi}
+    \verb 10.1266/ggs.84.385
+    \endverb
+    \field{issn}{1341-7568}
+    \field{number}{5}
+    \field{pages}{385 \bibrangedash  395}
+    \field{title}{MODA: An efficient algorithm for network motif discovery in
+  biological networks}
+    \field{volume}{84}
+    \field{journaltitle}{Genes and Genetic Systems}
+    \field{year}{2009}
+  \endentry
+
+  \entry{tetrahedron}{article}{}
+    \name{author}{1}{}{%
+      {{hash=WK}{%
+         family={W.},
+         familyi={W\bibinitperiod},
+         given={Kahan},
+         giveni={K\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{WK1}
+    \strng{fullhash}{WK1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{pages}{16–17}
+    \field{title}{What has the Volume of a Tetrahedron to do with Computer
+  Programming Languages?}
+    \field{volume}{1}
+  \endentry
+
+  \entry{paraview}{book}{}
+    \name{author}{1}{}{%
+      {{hash=MK}{%
+         family={Moreland},
+         familyi={M\bibinitperiod},
+         given={Kenneth},
+         giveni={K\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{MK1}
+    \strng{fullhash}{MK1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{title}{The ParaView Tutorial, Version 5.6}
+    \field{year}{2018}
+  \endentry
+
+  \entry{moran}{article}{}
+    \name{author}{1}{}{%
+      {{hash=MPAP}{%
+         family={MORAN},
+         familyi={M\bibinitperiod},
+         given={P.\bibnamedelima A.\bibnamedelima P.},
+         giveni={P\bibinitperiod\bibinitdelim A\bibinitperiod\bibinitdelim
+  P\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{MPAP1}
+    \strng{fullhash}{MPAP1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \verb{doi}
+    \verb 10.1093/biomet/37.1-2.17
+    \endverb
+    \verb{eprint}
+    \verb https://academic.oup.com/biomet/article-pdf/37/1-2/17/487420/37-1-2-1
+    \verb 7.pdf
+    \endverb
+    \field{issn}{0006-3444}
+    \field{number}{1-2}
+    \field{pages}{17\bibrangedash 23}
+    \field{title}{{NOTES ON CONTINUOUS STOCHASTIC PHENOMENA}}
+    \verb{url}
+    \verb https://doi.org/10.1093/biomet/37.1-2.17
+    \endverb
+    \field{volume}{37}
+    \field{journaltitle}{Biometrika}
+    \field{month}{06}
+    \field{year}{1950}
+  \endentry
+\enddatalist
+\endinput

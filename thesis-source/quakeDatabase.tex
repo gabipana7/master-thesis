@@ -1,0 +1,161 @@
+\chapter{Seismic Database}
+\label{chap:quakeDatabase}
+
+For each seismic region we wish to study, the first step is to collect the earthquakes databases available online, published by the respective region institute:
+\begin{itemize}
+	\item {\bf Vrancea(Romania)} - National Institute for Earth Phyiscs \cite{INFP}.
+	\item {\bf California(USA)} - Southern California Earthquake Center \cite{SCEC}.
+	\item {\bf Italy} - National Institute for Geophysics and Vulcanology \cite{INGV}.
+	\item {\bf Japan} - Japan Meteorological Agency \cite{JMA}.
+\end{itemize}
+
+\section{What is a Seismic Database}
+From the available data we select the event date, latitude, longitude, depth and magnitude and store the information on our machines so that it is easily accesible through an mySQL script in Python used to call the database, selecting all the events, or only a certain amount of events based on conditions put upon the date, magnitude or geographical position. \par 
+For the four regions mentioned earlier, the total data available spans the following timeframes and coordinates: 
+
+% |p{3.2cm}||p{2cm}|p{2cm}|p{2cm}|p{2cm}|
+\begin{center}
+\centering
+ \begin{tabular}{ |c||c|c|c|c|  }
+
+ \hline
+ \multicolumn{5}{|c|}{Seismic Databases} \\
+ \hline
+ Seismic Zone & Timeframe & Latitude & Longitude & Depth\\
+ \hline
+ \hline
+ \multirow{2}{8em}{Romania} & 0984-01-01 & 43.594$^{\circ}$N & 20.1$^{\circ}$E & 0\\
+ & 2021-02-28 & 48.23$^{\circ}$N & 26.14$^{\circ}$E & 218.4\\
+ \hline
+ \multirow{2}{8em}{California(USA)} & 1932-01-02 & 32$^{\circ}$N & -114$^{\circ}$W & 0\\
+ & 2020-12-31 & 37$^{\circ}$N & -122$^{\circ}$W & 51.1\\
+ \hline
+ \multirow{2}{8em}{Italy} & 1986-01-01 & 30.61$^{\circ}$N & -6.08$^{\circ}$W & 0\\
+ & 2020-12-31 & 47.998$^{\circ}$N & 36.02$^{\circ}$E & 644.4\\
+ \hline
+ \multirow{2}{8em}{Japan} & 1919-01-11 & 17.41$^{\circ}$N & 114.78$^{\circ}$E & 0\\
+ & 2019-08-31 & 54.97$^{\circ}$N & 160.17$^{\circ}$E & 698.4\\
+ \hline
+ \end{tabular}
+\end{center}
+
+For our analysis it is best to apply some restrictions when extracting data from the databases, in order to have a proper statistical relevance.
+For example, in Romania, the primary seismic zone, where most large magnitude earthquakes occur, is in Vrancea county, so in order to select only the earthquakes in this seismic region we would restrict the geographical coordinates as such:
+$45^{\circ}2'N-46^{\circ}N$ latitude, $26^{\circ}E-27^{\circ}E$ longitude and the depth between 50 km and 197 km.\par
+
+Also, for each sesimic zone, we restrict the timeframe by extracting data starting with a year when proper data collection started. For example, in Romania, the rigurous study of the Vrancea seismic zone started after the 7.4 magnitude earthquake of 1977-03-04, so this is why we restrict our statistic for earthquakes starting from the year 1976. For the other regions, the timeframes of our analysis are presented below.\par 
+
+In the following we present earthquakes distributions as scatterplots with size and colour of the points varying with the magnitude of the earthquake, for the four seismic zones analyzed. The magnitude scale is present along with the plots and the timeframe, coordinate restrictions and number of events are presented in the description of each graph:
+
+
+\paragraph{Romania and Vrancea} - Earthquakes Distribution
+\begin{figure}[!h]
+\begin{subfigure}{.5\textwidth}
+  \centering
+  \includegraphics[width=.95\linewidth]{quakesRomania_map}
+  \caption{Romania: 29186 earthquakes,\\ from 1976-02-03 13:29:16 to 2021-02-28 16:57:29.}
+  \label{fig:sfigRo}
+\end{subfigure}%
+\begin{subfigure}{.5\textwidth}
+  \centering
+  \includegraphics[width=.95\linewidth]{quakesVrancea_map}
+  \caption{Vrancea: 7512 earthquakes,\\ from 1976-08-19 19:03:01 to 2021-02-28 00:11:55.}
+  \label{fig:sfigVrancea}
+\end{subfigure}
+\caption{Earthquakes distribution for Romania (left) and Vrancea (right) seismic zones with magnitude $>1$. Largest magnitude recorded: 7.4 on Richter Scale.}
+\label{fig:simpleScatterRoVr}
+\end{figure}
+
+%\paragraph{California(USA)}
+%\begin{figure}[!h]
+%\begin{subfigure}{.5\textwidth}
+%  \centering
+%  \includegraphics[width=.95\linewidth]{quakesCalifornia_map}
+%  \caption{California}
+%  \label{fig:simpleScatterCali}
+%\end{subfigure}%
+%\begin{subfigure}{.5\textwidth}
+%  \centering
+%  \includegraphics[width=.95\linewidth]{quakesItaly_map}
+%  \caption{Italy}
+%  \label{fig:simpleScatterItaly}
+%\end{subfigure}
+%\caption{Simple scatter plot for California(USA) and Italy}
+%\label{fig:simpleScatterCaliItaly}
+%\end{figure}
+
+\clearpage
+\paragraph{California(USA)} - Earthquakes Distribution
+\begin{figure}[!h]
+\centering
+\includegraphics[width=.5\linewidth]{quakesCalifornia_map}
+\caption{Earthquakes distribution for California(USA), seismic zone: 221113 events with magnitude $>1$, from 1984-01-01 18:27:55 to 2020-12-31 23:04:53. Largest magnitude recorded: 7.2 on Richter Scale.}
+\label{fig:simpleScatteritaly}
+\end{figure}
+
+
+\paragraph{Italy} - Earthquakes Distribution
+\begin{figure}[!h]
+\centering
+\includegraphics[width=.5\linewidth]{quakesItaly_map}
+\caption{Earthquakes distribution for Italy seismic zone: 319567 events with magnitude $>1$, from 1986-01-01 17:22:53 to 2020-12-31 23:41:18. Largest magnitude recorded: 7 on Richter Scale.}
+\label{fig:simpleScatteritaly}
+\end{figure}
+
+
+\paragraph{Japan} - Earthquakes Distribution
+\begin{figure}[!h]
+\centering
+\includegraphics[width=.99\linewidth]{quakesJapan_map}
+\caption{Earthquakes distribution for Japan seismic zone: 595713 events with magnitude $>2$, from 1992-01-01 00:54:03 to 2019-08-31 23:54:24. Largest magnitude recorded: 9 on Richter Scale.}
+\label{fig:simpleScatterJapan}
+\end{figure}
+
+\clearpage
+\section{Seismic Table Construction}
+This section explains how to construct the seismic table containing the relevant information used in our upcoming computations. Into the same Python script used when calling the database using mySQL we implemented two aditional computations:
+
+Firstly, we can roughly estimate the energy release of each event by converting the moment magnitude $M_W$ to energy using the equation $log E = 5.24 + 1.44M$ where $M$ is the magnitude. \par 
+
+Secondly, in order to build our earthquakes network, we need to divide the spatial region selected into cubes and place each event in it's respective cube. The split is done as follows:
+\begin{itemize}
+
+	\item A side length for the cube is chosen : $sideLength = $ $5$ / $10$ km, depending on how much granularization of the network you wish to have.
+	
+	\item For each dimension, the total number of kilometers is computed\footnotemark,       then this total is divided to the length of the cube side, identifying the total number of cubes that fit in each dimension. In the following, the examples are for latitude:
+	\begin{equation}
+	\begin{split}
+	&X = round(\frac{(maxLatitude-minLatitude)111}{sideLength}),  \\
+	&X = \text{Total number of cubes on the latitude direction}, \\
+	&maxLatitude = \text{The maximum latitude at which an event is located}, \\
+	&minLatitude = \text{The minimum latitude at which an event is located}.	
+	\end{split}
+	\end{equation}
+	
+	
+\footnotetext{for each region, 1$^{\circ}$ latitude corresponds to 111 km, whereas for longitude, it changes depending on position on the globe. 1$^{\circ}$ longitude in Vrancea(Romania) is 79 km, in California(USA) 94 km, in Italy 84 km and in Japan 91 km.}
+
+	\item Then for each event, it's latitude index is assigned by converting it's dimension to the corresponding index:
+	\begin{equation}
+	\begin{split}
+	&x = floor(\frac{(i-minLatitude)X}{maxLatitude-minLatitude})+1, \\
+	&i = \text{The latitude of the event}, \\
+	&x = \text{The latitude index of the event}.
+	\end{split}
+	\end{equation}
+	
+	\item After doing the same for Longitude and Depth, a $cubeIndex$ is assigned to each event; this indexing taking values from 1 to the total number of cubes that we split the seismic zone into.
+	
+	\item Finally, for each cube, the real coordinates of it's center are also presented ($cubeLatitude$, $cubeLongitude$ and $cubeDepth$).
+\end{itemize}
+
+\clearpage
+This is an examle of how our earthquakes table would look like:
+\begin{figure}[!h]
+
+\centering
+\includegraphics[width=.95\linewidth]{quakesTable}
+\caption{The Earthquakes Table - our fundamental tool for the following analysis, containing the basic information from the databases available online ({\it date, latitude, longitude, depth and magnitude}) and our computations: the $energyRelease$ and the "cube parametrization" with indexing both in the "cubes space": $x$, $y$, $z$ and the real space: $cubeLatidue$, $cubeLongitude$, $cubeDepth$.\\ The data in this example represents the first 5 events in the Vrancea seismic zone, starting with the year 1976, as a pandas DataFrame in python.}
+\label{fig:quakesTable}
+
+\end{figure}

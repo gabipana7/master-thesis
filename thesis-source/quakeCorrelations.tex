@@ -1,0 +1,314 @@
+\chapter{Seismic Spatio-Temporal Autocorrelations}
+\label{chap:quakeCorrelations}
+
+%----------------------------------------------------
+\section{Correlations and Autocorrelations}
+
+Correlations represent a measure of how one value or system responds to another. There are many different types of correlation functions which can be used to determine the correlation of two random variables or systems. For example, time correlation functions are used in the theory of noise and stochastic processes in statistical physics and spectroscopy. \par 
+
+In signal processing, the term cross-correlation represents a type of correlation function, which is a generalized form of regular linear correlation. It is used to compare different time series, allowing to see how two signals match and where the best matching occurs, so hidden patterns in a signal may be revealed.\par 
+
+We introduced the term cross-correlation in order to understand autcorroleation, which is what we are interested in our work. The major difference between the two is that while cross-correlation is used when two {\bf different} sequences are correlated, autocorrelation means that the correlation occurs between two of the {\bf same} sequences, i.e. you correlate the signal with itself.
+
+
+%----------------------------------------------------
+\section{Spatial Autocorrelations}
+{\bf “Everything is related to everything else, but near things are more related than distant things.”} - Waldo R. Tobler, the first law of geography. \par \bigskip
+
+{\it Spatial autocorrelation} helps understand the degree to which one object is similar to other nearby objects. One of the most popular tests of spatial autocorrelation is the Moran's I test \cite{moran}. In the following we present how we applied this function and the results. The objects of our function represent the total energy released by the earthquakes in each of the cubes that we split our seismic region in. \par
+
+
+After creating the earthquake network we can establish the spatial correlations between nodes. First we compute the total energy release of the earthquakes in each node. So each cube now has the total energy $E_{ijk}$ associated with it.\par
+Next we compute the mean energy in the network:
+\begin{equation}
+\begin{split}
+&<E> = \frac{1}{N*M*L}\sum_{i=1}^{N}\sum_{j=1}^{M}\sum_{k=1}^{L} E_{ijk},\\
+&N = \text{Number of cubes in the latitude dimension},\\
+&M = \text{Number of cubes in the longitude dimension},\\
+&L = \text{Number of cubes in the depth dimension}.
+\end{split}
+\end{equation}
+
+Then we can compute the variance that represents the distance from the central value:
+\begin{equation}
+var(E) = \frac{1}{N*M*L}\sum_{i=1}^{N}\sum_{j=1}^{M}\sum_{k=1}^{L} (E_{ijk} -<E>)^2.
+\end{equation}
+
+The standard deviation can thus be defined as:
+\begin{equation}
+\sigma_E = \sqrt{var(E)}.
+\end{equation}
+
+Then we can introduce the covariance:
+\begin{equation}
+cov(E,r) = \frac{1}{N*M*L}\sum_{i=1}^{N}\sum_{j=1}^{M}\sum_{k=1}^{L} \sum_{l=1}^{N}\sum_{m=1}^{M}\sum_{n=1}^{L} (E_{ijk} -<E>)(E_{lmn} -<E>).
+\end{equation}
+where the cube with total energy $E_{lmn}$ is situated at distance $r$ from the cube with total energy $E_{ijk}$.
+
+Lastly, the spatial correlation index, $M2$ is defined as the ratio of the covariance to the standard deviation squared $\sigma_{E}^2$:
+\begin{equation}
+M2(E,r) = \frac{cov(E,r)}{\sigma^2_E}.
+\end{equation}
+
+
+\paragraph{Vrancea} Spatial autocorrleation function $M2(r)$ for Vrancea networks - 3 different cube sizes $5\times5\times5$ km, $10\times10\times10$ km and $20\times20\times20$ km. Each function is presented twice: the left plot is represented with the point in $M2(0)$ and on the right, without that point in order to better see the feature of the plot.
+
+
+
+
+\begin{figure}[!ht]
+\begin{subfigure}{.5\textwidth}
+  \centering
+  \includegraphics[width=.99\linewidth]{M2_V22_Vrancea_5km_1_mag_10}
+  \caption{With M2(0)}
+  \label{fig:corr5km}
+\end{subfigure}%
+\begin{subfigure}{.5\textwidth}
+  \centering
+  \includegraphics[width=.99\linewidth]{M2_V22_Vrancea_5km_1_mag_10_without0}
+  \caption{Without M2(0)}
+  \label{fig:corr5km_noZero}
+\end{subfigure}
+\caption{Spatial autocorrelation function $M2(r)$ for Vrancea seismic zone split into $5\times5\times5$ km cubes. $r$ represents the distance in multiples of $5$ km. The right hand plot, without the point $M2(0)$ better displays the feature of the plot}
+\label{fig:spcorrVrancea5km}
+\end{figure}
+
+\begin{figure}[!ht]
+\begin{subfigure}{.5\textwidth}
+  \centering
+  \includegraphics[width=.99\linewidth]{M2_V22_Vrancea_10km_1_mag_10}
+  \caption{With M2(0)}
+  \label{fig:corr10km}
+\end{subfigure}%
+\begin{subfigure}{.5\textwidth}
+  \centering
+  \includegraphics[width=.99\linewidth]{M2_V22_Vrancea_10km_1_mag_10_without0}
+  \caption{Without M2(0)}
+  \label{fig:corr10km_noZero}
+\end{subfigure}
+\caption{Spatial autocorrelation function $M2(r)$ for Vrancea seismic zone split into $10\times10\times10$ km cubes. $r$ represents the distance in multiples of $5$ km. The right hand plot, without the point $M2(0)$ better displays the feature of the plot}
+\label{fig:spcorrVrancea10km}
+\end{figure}
+
+\begin{figure}[!ht]
+\begin{subfigure}{.5\textwidth}
+  \centering
+  \includegraphics[width=.99\linewidth]{M2_V22_Vrancea_20km_1_mag_10}
+  \caption{With M2(0)}
+  \label{fig:corr20km}
+\end{subfigure}%
+\begin{subfigure}{.5\textwidth}
+  \centering
+  \includegraphics[width=.99\linewidth]{M2_V22_Vrancea_20km_1_mag_10_without0}
+  \caption{Without M2(0)}
+  \label{fig:corr20km_noZero}
+\end{subfigure}
+\caption{Spatial autocorrelation function $M2(r)$ for Vrancea seismic zone split into $20\times20\times20$ km cubes. $r$ represents the distance in multiples of $5$ km. The right hand plot, without the point $M2(0)$ better displays the feature of the plot}
+\label{fig:spcorrVrancea20km}
+\end{figure}
+
+
+
+\clearpage
+%----------------------------------------------------
+\section{Temporal Autocorrelations}
+In time series analysis, autocorrelation is used to correlate observations at a time step with observations at previous time steps, called {\it lags}.\par 
+In general, considering a time series $y_1,...,y_n$, it's mean is:
+\begin{equation}
+\bar{y}=\frac{1}{n}\sum_{i=1}^n y_i.
+\end{equation}
+The autocovariance function at lag $k$, for $k \geq 0$, of the time series is defined by:
+\begin{equation}
+s_k = \frac{1}{n}\sum_{i=1}^{n-k}(y_i - \bar{y})(y_{i+k} - \bar{y}).
+\end{equation}
+Finally, the autocorrelation function (ACF) at lag $k$ of the time series is:
+\begin{equation}
+r_k = \frac{s_k}{s_0}.
+\end{equation}
+
+For our networks, we need to establish a way of defining the lags, and the quantity that is to be autocorrelated. These calculations are made as such:
+
+\begin{itemize}
+	\item Establish the time period of the network, from the first earthquake of the database to the last. For example, as mentioned in Chapter \ref{chap:quakeDatabase} the timeframe we have for our whole network in Vrancea(Romania) is 19:03:01 August 19 1976 to 00:11:55 February 28 2021, so we would have a $timeframe$ of 16263 days and 05:08:54 hours.
+	\item Next we iterate through the table and find the biggest interval $dt$ between two consecutive earthquakes. 
+	\item Then, by dividing the total $timeframe$ by that interval $dt$ we create a certain amount of time windows $W$, so we have split the total timeframe in equal parts and surely each part contains at least one earthquake.
+	\item Place each earthquake in it's respective time window and calculate the total energy release for each time window. Now we have $E_i$ total energies (the values of our time series $y_i$) with $i = 1,2,...W$ (the lags).
+\end{itemize}
+Having defined our earthquake energies time series, we can now proceed to calculate the temporal autocorrelation function by adapting the formula described earlier:\par
+
+
+Firstly, compute the mean energy, by summing over all time windows $W$:
+\begin{equation}
+\bar{E} = \frac{1}{W}\sum_{i=1}^{W}E_i.
+\end{equation}
+
+Then you can compute the autocovariance function at lag $k$, for $k>=0$, of the time series as:
+\begin{equation}
+s_k = \frac{1}{W-k}\sum_{i=1}^{W-k} (E_i-\bar{E})(E_{i+k}-\bar{E}).
+\end{equation}
+
+Finally, the autocorrelation function is defined as:
+\begin{equation}
+C(k) = \frac{s_k}{s_0}.
+\end{equation}
+
+We realised Temporal AutoCorrelation Functions (TACFs) of the earthquake energies time series on several seismic networks, for two magnitude windows: below and above $3.5$. Below are the results, with and without the point $C(0)$ in order to better recognize the feature of the plot (the point $C(0)$ is always equal to $1$).
+
+
+%------------ VRANCEA CORR -%%%%%%%%%%%%
+\paragraph{Vrancea} TACF Vrancea(Romania) Seismic Network
+
+\begin{figure}[!ht]
+\begin{subfigure}{.5\textwidth}
+  \centering
+  \includegraphics[width=.95\linewidth]{TemporalCorrelation_Vrancea_2_mag_3-5}
+  \caption{With C(0)}
+  \label{fig:corrVrancea2_3.5}
+\end{subfigure}%
+\begin{subfigure}{.5\textwidth}
+  \centering
+  \includegraphics[width=.95\linewidth]{TemporalCorrelation_Vrancea_2_mag_3-5_noZero}
+  \caption{Without C(0)}
+  \label{fig:corrVrancea2_3.5_noZero}
+\end{subfigure}
+\caption{Temporal Autocorrelation Function for Vrancea(Romania) for magnitude restrictions: $2<mag<3.5$. A $timeframe$ of $16263$ days $05:08:54$ hours, containing a total of $6593$ number of events, is split into $W=83$ equal windows of $dt=198$ days $05:33:45$ hours.}
+\label{fig:corrVrancea2_3.5!}
+\end{figure}
+
+\begin{figure}[!ht]
+\begin{subfigure}{.5\textwidth}
+  \centering
+  \includegraphics[width=.95\linewidth]{TemporalCorrelation_Vrancea_3-5_mag_7}
+  \caption{With C(0)}
+  \label{fig:corrVrancea3.5_7}
+\end{subfigure}%
+\begin{subfigure}{.5\textwidth}
+  \centering
+  \includegraphics[width=.95\linewidth]{TemporalCorrelation_Vrancea_3-5_mag_7_noZero}
+  \caption{Without C(0)}
+  \label{fig:corrVrancea3.5_7_noZero}
+\end{subfigure}
+\caption{Temporal Autocorrelation Function for Vrancea(Romania) for magnitude restrictions: $3.5<mag<7$. A $timeframe$ of $16263$ days $05:08:54$ hours, containing a total of $1411$ number of events, is split into $W=105$ equal windows of $dt=154$ days $06:10:03$ hours.}
+\label{fig:corrVrancea3.5_7!}
+\end{figure}
+
+
+\clearpage
+%------------ California CORR -%%%%%%%%%%%%
+\paragraph{California} TACF California(USA) Seismic Network
+
+\begin{figure}[!ht]
+\begin{subfigure}{.5\textwidth}
+  \centering
+  \includegraphics[width=.95\linewidth]{TemporalCorrelation_California_2_mag_3-5}
+  \caption{With C(0)}
+  \label{fig:corrCalifornia2_3.5}
+\end{subfigure}%
+\begin{subfigure}{.5\textwidth}
+  \centering
+  \includegraphics[width=.95\linewidth]{TemporalCorrelation_California_2_mag_3-5_noZero}
+  \caption{Without C(0)}
+  \label{fig:corrCalifornia2_3.5_noZero}
+\end{subfigure}
+\caption{Temporal Autocorrelation Function for California(USA) for magnitude restrictions: $2<mag<3.5$. A $timeframe$ of $13514$ days $03:53:33$ hours, containing a total of $52290$ events, is split into $W=692$ equal windows of $dt=18$ days $12:30:46$ hours.}
+\label{fig:corrCalifornia2_3.5!}
+\end{figure}
+
+\begin{figure}[!ht]
+\begin{subfigure}{.5\textwidth}
+  \centering
+  \includegraphics[width=.95\linewidth]{TemporalCorrelation_California_3-5_mag_7-2}
+  \caption{With C(0)}
+  \label{fig:corrCalifornia3.5_7}
+\end{subfigure}%
+\begin{subfigure}{.5\textwidth}
+  \centering
+  \includegraphics[width=.95\linewidth]{TemporalCorrelation_California_3-5_mag_7-2_noZero}
+  \caption{Without C(0)}
+  \label{fig:corrCalifornia3.5_7_noZero}
+\end{subfigure}
+\caption{Temporal Autocorrelation Function for California(USA) for magnitude restrictions: $3.5<mag<7.2$. A $timeframe$ of $13514$ days $03:53:33$ hours, containing a total of $3387$ events, is split into $W=128$ equal windows of $dt=104$ days $07:15:31$ hours.}
+\label{fig:corrCalifornia3.5_7!}
+\end{figure}
+
+
+\clearpage
+%------------ Italy CORR -%%%%%%%%%%%%
+\paragraph{Italy} TACF Italy Seismic Network
+
+\begin{figure}[!ht]
+\begin{subfigure}{.5\textwidth}
+  \centering
+  \includegraphics[width=.95\linewidth]{TemporalCorrelation_Italy_2_mag_3-5}
+  \caption{With C(0)}
+  \label{fig:corrItaly2_3.5}
+\end{subfigure}%
+\begin{subfigure}{.5\textwidth}
+  \centering
+  \includegraphics[width=.95\linewidth]{TemporalCorrelation_Italy_2_mag_3-5_noZero}
+  \caption{Without C(0)}
+  \label{fig:corrItaly2_3.5_noZero}
+\end{subfigure}
+\caption{Temporal Autocorrelation Function for Italy for magnitude restrictions: $2<mag<3.5$. A $timeframe$ of $12783$ days $06:18:25$ hours, containing a total of $95004$ events, is split into $W=3040$ equal windows of $dt=3$ days $04:55:28$ hours.}
+\label{fig:corrItaly2_3.5!}
+\end{figure}
+
+\begin{figure}[!ht]
+\begin{subfigure}{.5\textwidth}
+  \centering
+  \includegraphics[width=.95\linewidth]{TemporalCorrelation_Italy_3-5_mag_7}
+  \caption{With C(0)}
+  \label{fig:corrItaly3.5_7}
+\end{subfigure}%
+\begin{subfigure}{.5\textwidth}
+  \centering
+  \includegraphics[width=.95\linewidth]{TemporalCorrelation_Italy_3-5_mag_7_noZero}
+  \caption{Without C(0)}
+  \label{fig:corrItaly3.5_7_noZero}
+\end{subfigure}
+\caption{Temporal Autocorrelation Function for Italy for magnitude restrictions: $3.5<mag<7$. A $timeframe$ of $12783$ days $06:18:25$ hours, containing a total of $4436$ events, is split into $W=270$ equal windows of $dt=46$ days $08:43:30$ hours.}
+\label{fig:corrItaly3.5_7!}
+\end{figure}
+
+
+
+\clearpage
+%------------ Japan CORR -%%%%%%%%%%%%
+\paragraph{Japan} ACF Japan Seismic Network
+
+\begin{figure}[!ht]
+\begin{subfigure}{.5\textwidth}
+  \centering
+  \includegraphics[width=.95\linewidth]{TemporalCorrelation_Japan_2_mag_3-5}
+  \caption{With C(0)}
+  \label{fig:corrJapan2_3.5}
+\end{subfigure}%
+\begin{subfigure}{.5\textwidth}
+  \centering
+  \includegraphics[width=.95\linewidth]{TemporalCorrelation_Japan_2_mag_3-5_noZero}
+  \caption{Without C(0)}
+  \label{fig:corrJapan2_3.5_noZero}
+\end{subfigure}
+\caption{Temporal Autocorrelation Function for Japan for magnitude restrictions: $2<mag<3.5$. A $timeframe$ of $10104$ days $22:53:49$ hours, containing a total of $618550$ events, is split into $W=6068$ equal windows of $dt=04:55:28$ hours.}
+\label{fig:corrJapan2_3.5!}
+\end{figure}
+
+
+\begin{figure}[!ht]
+\begin{subfigure}{.5\textwidth}
+  \centering
+  \includegraphics[width=.95\linewidth]{TemporalCorrelation_Japan_3-5_mag_9}
+  \caption{With C(0)}
+  \label{fig:corrJapan3.5_9}
+\end{subfigure}%
+\begin{subfigure}{.5\textwidth}
+  \centering
+  \includegraphics[width=.95\linewidth]{TemporalCorrelation_Japan_3-5_mag_9_noZero}
+  \caption{Without C(0)}
+  \label{fig:corrJapan3.5_9_noZero}
+\end{subfigure}
+\caption{Temporal Autocorrelation Function for Italy for magnitude restrictions: $3.5<mag<9$. A $timeframe$ of $10104$ days $22:53:49$ hours, containing a total of $84324$ events, is split into $W=3213$ equal windows of $dt=2$ days $03:29:02$ hours.}
+\label{fig:corrJapan3.5_9!}
+\end{figure}
+
+By analyzing the TACFs for earthquakes with $2<magnitude<3.5$, the events can be interpreted as fluctuations that exhibit a chaotic behaviour and at larger magnitudes, above $3.5$, this behaviour is lost. Here, peaks are recognized at certain lags suggesting a correlation between events at certain time intervals. This can be an indication that large events are more likely than not to be separated by these time frames. For example, in Vrancea we recognize a couple of peaks at around $30$ lags, which would translate as $\sim 12.65$ years. This means that it is possible for some large events to have a $12.65$ years span between them.\par 
