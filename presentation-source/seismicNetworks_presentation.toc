@@ -1,8 +1,0 @@
-\beamer@sectionintoc {1}{Introduction}{3}{0}{1}
-\beamer@sectionintoc {2}{Complex Systems}{4}{0}{2}
-\beamer@sectionintoc {3}{Seismic Models}{12}{0}{3}
-\beamer@sectionintoc {4}{Seismic Databases}{17}{0}{4}
-\beamer@sectionintoc {5}{Seismic Networks}{25}{0}{5}
-\beamer@sectionintoc {6}{Autocorrelations}{55}{0}{6}
-\beamer@sectionintoc {7}{Conclusion}{63}{0}{7}
-\beamer@sectionintoc {8}{References}{65}{0}{8}
