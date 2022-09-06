@@ -1,0 +1,137 @@
+\section{Seismic Databases}
+
+
+%----------------------------------------------------------------%
+\begin{frame}{Seismic Databases}
+For each seismic region we wish to study, the first step is to collect the earthquakes databases available online, published by the respective region institute:
+\begin{itemize}
+	\item {\bf Vrancea(Romania)} - National Institute for Earth Phyiscs.
+	\item {\bf California(USA)} - Southern California Earthquake Center.
+	\item {\bf Italy} - National Institute for Geophysics and Vulcanology.
+	\item {\bf Japan} - Japan Meteorological Agency.
+\end{itemize}
+\end{frame}
+
+
+%----------------------------------------------------------------%
+\begin{frame}{All data available in databases}
+\begin{center}
+\centering
+ \begin{tabular}{ |c||c|c|c|c|  }
+
+ \hline
+ \multicolumn{5}{|c|}{Seismic Databases} \\
+ \hline
+ Seismic Zone & Timeframe & Latitude & Longitude & Depth\\
+ \hline
+ \hline
+ \multirow{2}{8em}{Romania} & 0984-01-01 & 43.594$^{\circ}$N & 20.1$^{\circ}$E & 0\\
+ & 2021-02-28 & 48.23$^{\circ}$N & 26.14$^{\circ}$E & 218.4\\
+ \hline
+ \multirow{2}{8em}{California(USA)} & 1932-01-02 & 32$^{\circ}$N & -114$^{\circ}$W & 0\\
+ & 2020-12-31 & 37$^{\circ}$N & -122$^{\circ}$W & 51.1\\
+ \hline
+ \multirow{2}{8em}{Italy} & 1986-01-01 & 30.61$^{\circ}$N & -6.08$^{\circ}$W & 0\\
+ & 2020-12-31 & 47.998$^{\circ}$N & 36.02$^{\circ}$E & 644.4\\
+ \hline
+ \multirow{2}{8em}{Japan} & 1919-01-11 & 17.41$^{\circ}$N & 114.78$^{\circ}$E & 0\\
+ & 2019-08-31 & 54.97$^{\circ}$N & 160.17$^{\circ}$E & 698.4\\
+ \hline
+ \end{tabular}
+\end{center}
+\end{frame}
+
+
+%----------------------------------------------------------------%
+\begin{frame}{Romania and Vrancea} 
+
+\begin{figure}[!h]
+\begin{subfigure}{.5\textwidth}
+  \centering
+  \includegraphics[width=.9\linewidth]{quakesRomania_map}
+  \caption{Romania: 29186 earthquakes,\\ from 1976-02-03 13:29:16 to 2021-02-28 16:57:29.}
+  \label{fig:sfigRo}
+\end{subfigure}%
+\begin{subfigure}{.5\textwidth}
+  \centering
+  \includegraphics[width=.9\linewidth]{quakesVrancea_map}
+  \caption{Vrancea: 7512 earthquakes,\\ from 1976-08-19 19:03:01 to 2021-02-28 00:11:55.}
+  \label{fig:sfigVrancea}
+\end{subfigure}
+\caption{Earthquakes distribution for Romania (left) and Vrancea (right) seismic zones with magnitude $>1$.}
+\label{fig:simpleScatterRoVr}
+\end{figure}
+
+\end{frame}
+
+
+%----------------------------------------------------------------%
+\begin{frame}{California(USA)}
+\begin{figure}[!h]
+\centering
+\includegraphics[width=.5\linewidth]{quakesCalifornia_map}
+\caption{Earthquakes distribution for California(USA), seismic zone: 221113 events with magnitude $>1$, from 1984-01-01 18:27:55 to 2020-12-31 23:04:53.}
+\label{fig:simpleScatteritaly}
+\end{figure}
+\end{frame}
+
+
+
+%----------------------------------------------------------------%
+\begin{frame}{Italy}
+
+\begin{figure}[!h]
+\centering
+\includegraphics[width=.5\linewidth]{quakesItaly_map}
+\caption{Earthquakes distribution for Italy seismic zone: 319567 events with magnitude $>1$, from 1986-01-01 17:22:53 to 2020-12-31 23:41:18.}
+\label{fig:simpleScatteritaly}
+\end{figure}
+
+\end{frame}
+
+
+%----------------------------------------------------------------%
+\begin{frame}{Japan}
+\begin{figure}[!h]
+\centering
+\includegraphics[width=.5\linewidth]{quakesJapan_map}
+\caption{Earthquakes distribution for Japan seismic zone: 595713 events with magnitude $>2$, from 1992-01-01 00:54:03 to 2019-08-31 23:54:24.}
+\label{fig:simpleScatterJapan}
+\end{figure}
+\end{frame}
+
+
+%----------------------------------------------------------------%
+\begin{frame}{Earthquake Table}
+The fundamental tool we use in our analysis is the Earthquakes Table:
+
+\begin{figure}[!h]
+
+\centering
+\includegraphics[width=\linewidth]{quakesTable}
+\caption{The Earthquakes Table - our fundamental tool for the following analysis, containing the basic information from the databases available online ({\it date, latitude, longitude, depth and magnitude}) and our computations: the $energyRelease$ and the "cube parametrization" with indexing both in the "cubes space": $x$, $y$, $z$ and the real space: $cubeLatidue$, $cubeLongitude$, $cubeDepth$.\\ }
+\label{fig:quakesTable}
+\end{figure}
+The data in this example represents the first 5 events in the Vrancea seismic zone, starting with the year 1976, as a pandas DataFrame in Python.
+
+\end{frame}
+
+%----------------------------------------------------------------%
+\begin{frame}
+\begin{enumerate}
+	\item {\bf energyRelease:} we can roughly estimate the energy release of each event by converting the moment magnitude $M_W$ to energy using the equation $log E = 5.24 + 1.44M$ where $M$ is the magnitude. 
+	\item {\bf Cube splitting:} in order to build our earthquakes network, we need to divide the spatial region selected into cubes and place each event in it's respective cube.
+\end{enumerate}
+
+\begin{figure}[h!]
+\centering
+\tikz[remember
+picture]{\node(1BL){\includegraphics[width=4cm]{quakesVrancea_grid}};}%
+\hspace*{3cm}%
+\tikz[remember picture]{\node(1BR){\includegraphics[width=4cm]{quakesVrancea_cubeSplit}};}
+\end{figure}
+\tikz[overlay,remember picture]{\draw[-latex,thick] (1BL) -- (1BL-|1BR.west)
+node[midway,below,text width=2cm]{Cube split};} 
+
+\end{frame}
+

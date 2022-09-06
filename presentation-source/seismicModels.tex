@@ -1,0 +1,96 @@
+\section{Seismic Models}
+
+
+%----------------------------------------------------------------%
+\begin{frame}{Bak, Tang and Wiesenfeld's Sandpile Model}
+\begin{figure}[!h]
+  \centering
+  \includegraphics[width=.5\linewidth]{SOC_sandpile}
+  \caption{An illustration from "How Nature Works", a drawing by Elaine Wiesenfeld in which the dropping of grains of sand on a little pile on the beach is pictured.}
+  \label{fig:driverBlock}
+\end{figure}
+\end{frame}
+
+\begin{comment}
+%----------------------------------------------------------------%
+\begin{frame}
+The model is described as a two-dimensional sandpile, a cellular automaton comprising of interactions of an integer variable $z$ (number of sand grains in a site) with it's nearest neighbours. A grid of sites is created, with boundary conditions $z=0$. The sites are updated at random by dropping sand on them, and when $z>K$ (a threshold value) redistribution occurs:
+\begin{align}
+&z(x,y) \to z(x,y)-4, \\
+&z(x\pm 1,y) \to z(x \pm 1,y)+1, \\
+&z(x,y\pm 1) \to z(x,y\pm 1)+1.
+\end{align}
+The site is initiated with random values for each site $z>>K$ and it evolves until it stops $z<K$. \par
+Simulations show that the distribution of cluster sizes and time scales follow power-law distributions.\par 
+The self-organized critical state of minimally stable clusters is very robust on all length scales and they create fluctuations on all time scales.
+\end{frame}
+\end{comment}
+
+
+%----------------------------------------------------------------%
+\begin{frame}{Per Bak's Bureaucrats Model}
+In his famous book, How Nature Works, Per Bak describes a re-imagination of the sandpile model, called the bureaucrats model. The principle is similar and it is illustrated in the following picture:
+
+\begin{figure}[!h]
+  \centering
+  \includegraphics[width=.7\linewidth]{SOC_bureaucrats}
+  \caption{The "Office" version of the sandpile model. At each timestep a document is placed on the desk of a bureaucrat. When he finds four or more documents on his desk, he redistributes them, one to each of his neighbours, or he throws it out the window if he is at the edge of the room (the boundary conditions).}
+  \label{fig:bureaucrats}
+\end{figure}
+\end{frame}
+
+
+%----------------------------------------------------------------%
+\begin{frame}{Olami-Feder-Christensen Slider-Blocks Model}
+
+\begin{columns}
+          \column{0.38\linewidth}
+             \centering
+             \includegraphics[width=5cm]{SOC_sliderBlocks}
+           \column{0.58\linewidth}
+              \textbf{The model is constructed as follows :}
+               \begin{enumerate}
+	\item consider a 2D lattice of blocks;
+	\item each block is connected with springs to its four nearest nighbours and to a rigid moving plate;
+	\item each block interacts frictionally to a fixed plate that they move on;
+	\item blocks are driven by the continuous displacement of the moving plate;
+	\item when the force of one of the blocks reaches a threshold value $F_{th}$, the block slips, redefining the forces of it's neighbours;
+	
+				\end{enumerate}
+
+         \end{columns} 
+
+\vspace{5mm} 
+
+	The slip of one block may result in an avalanche of slips by the nearest blocks resulting in a chain reaction.
+\end{frame}
+
+
+%----------------------------------------------------------------%
+\begin{frame}
+The model evolves as follows:
+\begin{enumerate}
+	\item initialize all sites' forces to a random value between 0 and 1;
+	\item check if any $F_{ij} \geq F_{th}$;
+	\item if yes, redistribute the force according to:
+	\begin{align}
+	&F_{n,n} \to F_{n,n} + \alpha F_{i,j},\\
+	&F_{i,j} \to 0.
+	\end{align}
+	\item repeat from step 2 until the earthquake fully evolves;
+	\item locate the block with $F_{max}$ and add $F_{th}-F_{max}$ to all blocks and return to the second step.
+\end{enumerate}
+The probability distribution of the total number of relaxations of the slips (earthquakes) is measured. This quantitiy is proportional to the energy release during an earthquake. This cellular automaton model is found to show SOC behaviour for a large number of $\alpha$ values.\par 
+\end{frame}
+
+
+%----------------------------------------------------------------%
+\begin{frame}{Slider-blocks model conclusions}
+OFC reached the following results with their model:
+\begin{itemize}
+	\item displays robust SOC behaviour over a number of conservation levels;
+	\item the amount of conservation impacts the obtained power-laws;
+	\item as conservation increases, the behaviour transitions from localized to nonlocalized;
+	\item this conservation dependence explains the variance of the parameter in the Gutenberg-Richter law.
+\end{itemize}
+\end{frame}
