@@ -1,0 +1,41 @@
+\begin{tikzpicture}
+	\begin{pgfonlayer}{nodelayer}
+		\node [style=none] (30) at (-2.75, 2.75) {};
+		\node [style=none] (31) at (2.75, -2.75) {};
+		\node [style=none] (32) at (-2.75, -2.75) {};
+		\node [style=none] (33) at (2.75, 2.75) {};
+		\node [style=lattice site] (0) at (2.75, 2.75) {};
+		\node [style=lattice site] (1) at (-2.75, 2.75) {};
+		\node [style=lattice site] (2) at (-2.75, -2.75) {};
+		\node [style=lattice site] (3) at (2.75, -2.75) {};
+		\node [style=none] (5) at (4.5, 3.25) {\small$\boldsymbol{x}+\hat{\mu}+\hat{\nu}$};
+		\node [style=none] (8) at (3.75, -3.25) {\small$\boldsymbol{x}+\hat{\mu}$};
+		\node [style=none] (10) at (-3.75, 3.25) {\small$\boldsymbol{x}+\hat{\nu}$};
+		\node [style=none] (12) at (-3.25, -3.25) {\small$\boldsymbol{x}$};
+		\node [style=none] (20) at (0, 0) {\color{plaquette}\Large$\mathsf{W}_{\boldsymbol{x},\mu\nu}$};
+		\node [style=none] (27) at (0, -3.5) {\color{gaugelink}\large$\mathsf{W}_{\boldsymbol{x},\mu}$};
+		\node [style=cube lattice] (34) at (-1.5, 4) {};
+		\node [style=cube lattice] (35) at (4, 4) {};
+		\node [style=cube lattice] (36) at (4, -1.5) {};
+		\node [style=cube lattice] (37) at (-1.5, -1.5) {};
+	\end{pgfonlayer}
+	\begin{pgfonlayer}{edgelayer}
+		\draw [style=invisible line] (31.center)
+			 to (33.center)
+			 to (30.center)
+			 to (32.center)
+			 to cycle;
+		\draw [style=normal line] (1) to (2);
+		\draw [style=normal line] (1) to (0);
+		\draw [style=normal line] (0) to (3);
+		\draw [style=cube line] (1) to (34);
+		\draw [style=cube line] (34) to (35);
+		\draw [style=cube line] (34) to (37);
+		\draw [style=cube line] (37) to (2);
+		\draw [style=cube line] (37) to (36);
+		\draw [style=cube line] (36) to (3);
+		\draw [style=cube line] (36) to (35);
+		\draw [style=cube line] (35) to (0);
+		\draw [style=gauge link] (2) to (3);
+	\end{pgfonlayer}
+\end{tikzpicture}

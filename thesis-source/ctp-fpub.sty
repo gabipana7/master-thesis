@@ -1,0 +1,162 @@
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{ctp-fpub}
+
+% Package for colors
+\RequirePackage{xcolor}
+% Package for page size and margins
+\RequirePackage{geometry}
+\geometry{a4paper, textwidth=15cm, textheight=23cm,}
+
+\definecolor{maincolor}{HTML}{\htmlmaincolorcode}
+
+% Options for the color scheme
+\DeclareOption{customcolor}{\definecolor{maincolor}{HTML}{\htmlmaincolorcode}}
+\DeclareOption{black}{\definecolor{maincolor}{HTML}{000000}}
+\ProcessOptions\relax
+
+\def\accentcolor{maincolor}
+
+% Package for including figures
+\usepackage{graphicx}
+% Specify path where all images are placed
+\graphicspath{{images/}}
+
+% Package for Sans Serif + Small Caps version of Computer Modern font
+\usepackage[notmath]{sansmathfonts}
+
+% Used to indent the first paragraph
+\usepackage{indentfirst}
+
+% Package for if statements in LaTeX
+\usepackage{xifthen}
+
+% Package for controlling spacing between lines
+\usepackage{setspace}
+
+% Style for the chapter, section, subsection and subsubection title
+\usepackage{titlesec}
+\titleformat{\chapter}[display]
+  {\sffamily\huge}
+  {\scshape\textcolor{maincolor}{\chaptertitlename\ \thechapter}}{10pt}{\Huge}
+% Reduce the space before chapter title
+\titlespacing*{\chapter}{0pt}{-10pt}{20pt}
+\titleformat{\section}
+  {\sffamily\Large}
+  {\textcolor{maincolor}{\thesection}}{10pt}{}
+\titleformat{\subsection}
+  {\sffamily\large}
+  {\textcolor{maincolor}{\thesubsection}}{10pt}{}
+\titleformat{\subsubsection}
+  {\sffamily}
+  {\textcolor{maincolor}{\thesubsubsection}}{10pt}{}
+  
+% Table of contents style
+\RequirePackage[titles]{tocloft}
+\renewcommand{\cftchapfont}{\sffamily\large}
+
+% Colored equation label
+\renewcommand\theequation{{\color{maincolor}\sffamily\arabic{equation}}}
+
+% Packages for multiple mathematical environments
+\RequirePackage{amsmath}
+\RequirePackage{amsthm}
+
+% Theorem style
+\newtheoremstyle{numberedtheoremstyle} 
+        {\topsep}{\topsep}{\itshape}{}{}{}{.5em}                      
+        {{\color{\accentcolor}\sffamily\thmname{#1} \thmnumber{#2}} (\thmnote{#3})\\} 
+\theoremstyle{numberedtheoremstyle}\newtheorem{theorem}{Theorem}[chapter]
+\newtheoremstyle{unnumberedtheoremstyle} 
+        {\topsep}{\topsep}{\itshape}{}{}{}{.5em}                      
+        {{\color{\accentcolor}\sffamily\thmname{#1}} (\thmnote{#3})\\} 
+\theoremstyle{unnumberedtheoremstyle}
+\newtheorem*{theorem*}{Theorem}
+
+% Definition style
+\newtheoremstyle{numbereddefinitionstyle} 
+        {\topsep}{\topsep}{\itshape}{}{}{}{.5em}                      
+        {{\color{\accentcolor}\sffamily\thmname{#1} \thmnumber{#2}} (\thmnote{#3})\\} 
+\theoremstyle{numbereddefinitionstyle}
+\newtheorem{definition}{Definition}[chapter]
+\newtheoremstyle{unnumbereddefinitionstyle} 
+        {\topsep}{\topsep}{\itshape}{}{}{}{.5em}                      
+        {{\color{\accentcolor}\sffamily\thmname{#1}} (\thmnote{#3})\\} 
+\theoremstyle{unnumbereddefinitionstyle}
+\newtheorem*{definition*}{Definition}
+
+% Remark style
+\newtheoremstyle{remarkstyle} 
+        {\topsep}{\topsep}{\itshape}{}{}{}{.5em}                      
+        {{\color{\accentcolor}\sffamily\itshape\thmname{#1}}\\} 
+\theoremstyle{remarkstyle}
+\newtheorem{remark}{Remark}
+
+% QED symbol
+\usepackage{tikz}
+\usetikzlibrary{plotmarks}
+\newcommand\marksymbol[2]{\tikz[#2,scale=1.5]\pgfuseplotmark{#1};}
+
+% Proof style
+\makeatletter
+\renewenvironment{proof}[1][\proofname]
+	{\trivlist\item[\hskip\labelsep\sffamily\color{\accentcolor} #1]~\newline\itshape}
+	{\marksymbol{square}{\accentcolor}\endtrivlist\@endpefalse}
+\makeatother
+
+% Package for boxed equations
+\RequirePackage{empheq}
+\definecolor{shadecolor}{HTML}{\htmlshadecolorcode}
+\newcommand{\shadedeq}[1]{\begin{empheq}[box=\colorbox{shadecolor}]{equation*}#1\end{empheq}}
+\newcommand{\shadedeqlabel}[2]{\begin{empheq}[box=\colorbox{shadecolor}]{equation}\label{#1}#2\end{empheq}}
+\newcommand{\boxedeq}[1]{\begin{empheq}[box={\color{\accentcolor}\fboxsep=4pt\fboxrule=0.9pt\fbox}]{equation*}#1\end{empheq}}
+\newcommand{\boxedeqlabel}[2]{\begin{empheq}[box={\color{\accentcolor}\fboxsep=4pt\fboxrule=0.9pt\fbox}]{equation}\label{#1}#2\end{empheq}}
+
+% Package for customizing table and figure captions
+\RequirePackage{caption}
+
+% Custom style for captions
+\DeclareCaptionFont{customfont}{\sffamily\color{\accentcolor}}
+\captionsetup[table]{labelfont=customfont}
+\captionsetup[figure]{labelfont=customfont}
+
+% Package from smart references, must be loaded before cleveref
+\RequirePackage[colorlinks]{hyperref}
+\hypersetup{citecolor=\accentcolor, urlcolor=\accentcolor, linkbordercolor=\accentcolor, menubordercolor=\accentcolor, linkcolor=black}
+
+% Package for customizing equations, figures, tables reference labels
+\RequirePackage{cleveref}
+
+\crefformat{table}{#2{\sffamily\color{\accentcolor}#1}#3}
+\crefformat{figure}{#2{\sffamily{\color{\accentcolor}#1}}#3}
+%\crefformat{equation}{#2\color{black}Equation ({\sffamily\color{\accentcolor}#1})#3}
+\crefformat{equation}{#2({\sffamily\color{\accentcolor}#1})#3}
+\crefformat{chapter}{#2{\sffamily\color{\accentcolor}#1}#3}
+\crefformat{section}{#2{\sffamily\color{\accentcolor}#1}#3}
+\crefformat{subsection}{#2{\sffamily\color{\accentcolor}#1}#3}
+
+% Footnote style
+\renewcommand\footnoterule{{\color{maincolor}\hrule height 0.5pt}} 
+\setlength{\footnotesep}{1pc}
+\let\oldfootnote\footnote
+\renewcommand\footnote[1]{\oldfootnote{\hspace{1mm}#1}}
+\renewcommand\thefootnote{\textcolor{maincolor}{\arabic{footnote}}}
+
+
+% Package for managing the bibliography
+\RequirePackage[style=numeric-comp,sorting=none,backend=bibtex8]{biblatex}
+% Remove some unwanted entries from the bibliography
+\AtEveryBibitem{
+	\clearfield{issn}
+	\clearfield{isbn}
+	\clearfield{archivePrefix}
+	\clearfield{arxivId}
+	\clearfield{pmid}
+	\clearfield{eprint}
+% 	\ifentrytype{online}{}{\clearfield{url}}
+	\ifentrytype{online}{}{\ifentrytype{misc}{}{\clearfield{url}}}
+	\ifentrytype{book}{\clearfield{doi}}{}
+}
+
+% Other packages
+\RequirePackage{amsfonts,amssymb, subcaption}
+\RequirePackage[utf8]{inputenc}
