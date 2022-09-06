@@ -10,5 +10,5 @@
 
 ---
 ### Presentation
-- *presentation-source- contains TeX source code for the **improved** Thesis presentation in English
+- *presentation-source* contains TeX source code for the **improved** Thesis presentation in English
 - *master-presentation.pdf* is the Thesis presentation in English
