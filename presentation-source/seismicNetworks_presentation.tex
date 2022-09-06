@@ -1,0 +1,176 @@
+\documentclass[10pt]{beamer}
+\usetheme{Boadilla}
+
+%%% ADD HERE ALL THE PACKAGES YOU USE %%%
+% Packages required only for the specific content in this template, remove if not needed
+\usepackage{slashed}
+\usepackage{dsfont}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{bm}
+
+
+%%% ADD HERE ALL THE PACKAGES YOU USE %%%
+% Packages required only for the specific content in this template, remove if not needed
+\usepackage{slashed}
+\usepackage{dsfont}
+\usepackage{amsmath}
+
+
+%%% COMMANDS & PACKAGES FOR TIKZIT %%%
+%%% Requires tikzit.sty in the main folder, remove if not needed
+\usepackage{tikzit}
+\definecolor{gaugelink}{HTML}{87608b}
+\definecolor{plaquette}{HTML}{607b8b}
+\input{tikzit/plaquettes.tikzstyles}
+% Package needed to scale .tikz diagrams
+\usepackage{tikzscale}
+\usetikzlibrary{positioning}
+\usepackage{multirow}
+\usepackage{caption}
+\captionsetup[figure]{font=footnotesize}
+
+\usepackage{graphicx}
+\usepackage{subcaption}
+\captionsetup{compatibility=false}
+
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{yfonts}
+\usepackage{bm}
+\usepackage{amssymb}
+
+\usepackage{verbatim}
+
+%\usepackage{graphicx}
+\graphicspath{ {./images/} }
+%\usepackage{subfigure}
+
+
+\usepackage{mathtools}
+\usepackage{esint}
+
+
+\newcommand*{\dd}{\mathop{}\!\mathrm{d}}
+
+
+\makeatother
+\setbeamertemplate{footline}
+{
+  \leavevmode%
+  \hbox{%
+  \begin{beamercolorbox}[wd=.4\paperwidth,ht=2.25ex,dp=1ex,center]{author in head/foot}%
+    \usebeamerfont{author in head/foot}\insertshortauthor
+  \end{beamercolorbox}%
+  \begin{beamercolorbox}[wd=.6\paperwidth,ht=2.25ex,dp=1ex,center]{title in head/foot}%
+    \usebeamerfont{title in head/foot}\insertshorttitle\hspace*{3em}
+    \insertframenumber{} / \inserttotalframenumber\hspace*{1ex}
+  \end{beamercolorbox}}%
+  \vskip0pt%
+}
+
+
+
+\makeatletter
+
+\setbeamertemplate{frametitle}{%
+  \ifbeamercolorempty[bg]{frametitle}{}{\nointerlineskip}%
+  \@tempdima=\textwidth%
+  \advance\@tempdima by\beamer@leftmargin%
+  \advance\@tempdima by\beamer@rightmargin%
+  \begin{beamercolorbox}[sep=0.2cm,left,wd=\the\@tempdima]{frametitle}
+    \usebeamerfont{frametitle}%
+    \vbox{}\vskip-2ex%
+    \if@tempswa\else\csname beamer@fteleft\endcsname\fi%
+    \strut\insertframetitle\strut\par%
+    {%
+      \ifx\insertframesubtitle\@empty%
+      \else%
+      {\usebeamerfont{framesubtitle}\usebeamercolor[fg]{framesubtitle}\insertframesubtitle\strut\par}%
+      \fi
+    }%
+    \vskip-1ex%
+    \if@tempswa\else\vskip-.3cm\fi% set inside beamercolorbox... evil here...
+  \end{beamercolorbox}%
+}
+
+\setbeamertemplate{navigation symbols}{}
+
+
+\date{June 30, 2021}
+\title{Properties of Seismic Scale-free Networks}
+\author{Gabriel Tiberiu Pan\u{a}}
+\institute{Theoretical and Computational Physics}
+
+\begin{document}
+
+{
+\usebackgroundtemplate{%
+\tikz\node[opacity=0.4] {\includegraphics[height=\paperheight,width=\paperwidth]{motifs_romania_5km_4mag_trianglesFilled}};}
+\begin{frame}[noframenumbering,plain]
+	\titlepage
+\end{frame}
+}
+	
+\begin{frame}{Outline}
+	\tableofcontents
+\end{frame}
+
+
+\section{Introduction}
+\begin{frame}{Introduction}
+In this work we will familiarize ourselves with some complexity theory concepts such as complex systems, network theory, critical phenomena and self-organization to criticality.\par
+
+\vspace{5mm} 
+
+Then we will analyze various seismic regions around the globe from the perspective of complex networks with the aid of the mathematical tools of graph theory. We expect that this would reinforce the idea that seismic zones behave as complex, self-organized critical systems.\par 
+\end{frame}
+
+
+\include{complexSystems}
+\include{seismicModels}
+\include{seismicDatabases}
+\include{seismicNetworks}
+\include{autocorrelations}
+
+
+\section{Conclusion}
+%-------------------------------------------------%
+\begin{frame}{Conclusion}
+In conclusion, we have shown:
+\begin{itemize}
+	\item How to access and extract information about earthquakes from the databases available.
+	\item Used complex networks to construct seismic networks for regions around the globe.
+	\item By measures of connectivity and motif discovery, we found scale-free behaviour for the node degrees and for surfaces or volumes of motifs weighted by their total and mean energy release of earthquakes in these motifs.
+	\item By realizing these calculations for a number of magnitude ranges and cube granularization of the zone, we have shown that the scale-free networks are {\bf very robust}.
+	\item We presented the real networks with the visualization tool Paraview.
+	\item We calculated temporal autocorrelations for different seismic zones.
+	\item Every computation indicates, for each zone that the seismic phenomena may display a form of {\bf self-organization to criticality}
+\end{itemize}
+\end{frame}
+
+
+%-------------------------------------------------%
+\begin{frame}{Future work}
+In the future, with more {\bf computational capability}, motifs can be identified for bigger and more complex networks, for example all the earthquakes in Japan. \par 
+
+\vspace{5mm} 
+
+Further study can be done in this space, with the possibility of analyzing {\bf other seismic regions} by employing the same computational tools used in this report. \par
+
+\vspace{5mm} 
+
+Also, from the perspective of network theory, other {\bf centrality or community measures} may give insight about {\bf clusters of earthquakes}, opening the possibility of splitting a region into more relevant sections. 
+\end{frame}
+
+
+%\section{References}		
+%\begin{frame}[allowframebreaks]{References}
+
+%\bibliographystyle{amsalpha}
+%\bibliography{references}
+
+%\end{frame}
+
+\end{document}
